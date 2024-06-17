@@ -23,7 +23,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '8.x' # Adjust to the .NET version you need
+          dotnet-version: '6.x' # Adjust to the .NET version you need
 
       - name: Install .NET tools
         run: |
@@ -31,9 +31,8 @@ jobs:
           dotnet tool install -g dotnet-stryker
 
       - name: Add .NET tools to PATH
-        with:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS=true
-        # run: echo "::add-path::$(dotnet tool path)"
+        shell: bash
+        run: echo "${{ github.environment }}" >> $GITHUB_ENV
 
       - name: Run PowerShell Script
         run: |
