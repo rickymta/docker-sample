@@ -23,12 +23,12 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v1
         with:
-          dotnet-version: '6.x' # Adjust to the .NET version you need
+          dotnet-version: '8.x' # Adjust to the .NET version you need
 
       - name: Install .NET tools
         run: |
-          dotnet tool install -g dotnet-format
-          dotnet tool install -g dotnet-stryker
+          dotnet tool install --global dotnet-format --version 5.1.250801
+          dotnet tool install --global dotnet-stryker --version 4.0.6
 
       - name: Add .NET tools to PATH
         shell: bash
