@@ -15,7 +15,7 @@ $srcDir = "$PSScriptRoot\src"
 # $projects = (Get-ChildItem -Path $srcDir -Directory | ForEach-Object { $_.FullName })
 $projects = (
     "src/Services/Draft.Services.AuthService/Draft.Services.AuthService.csproj",
-    "src/Presentation/Draft.Presentation.ApiGateway/Draft.Presentation.ApiGateway.csproj"
+    "src/Presentation/Draft.Presentations.ApiGateway/Draft.Presentations.ApiGateway.csproj"
 )
 
 foreach ($project in $projects) {
