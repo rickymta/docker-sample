@@ -11,7 +11,7 @@ function ExecSafe([scriptblock] $cmd) {
 
 $srcDir = "$PSScriptRoot\src"
 
-# Lấy danh sách các project động từ các thư mục con bên trong thư mục src
+# Get a list of dynamic projects from subfolders inside the src folder
 $projects = Get-ChildItem -Path $srcDir -Directory | ForEach-Object { $_.FullName }
 
 foreach ($project in $projects) {
