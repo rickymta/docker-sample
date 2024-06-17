@@ -1,6 +1,6 @@
 param (
     [Parameter(Mandatory=$true)]
-    [ValidateSet("Compile", "LintCheck", "RunUnitTests", "RunMutationTests")]
+    [ValidateSet("All", "Compile", "LintCheck", "RunUnitTests", "RunMutationTests")]
     [string]$Task
 )
 

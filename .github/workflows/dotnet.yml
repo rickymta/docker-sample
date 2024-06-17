@@ -36,5 +36,5 @@ jobs:
 
       - name: Run PowerShell Script
         run: |
-          pwsh -file ./build.ps1
+          pwsh -file ./build.ps1 -Task All
         shell: pwsh
