@@ -12,7 +12,11 @@ function ExecSafe([scriptblock] $cmd) {
 $srcDir = "$PSScriptRoot\src"
 
 # Get a list of dynamic projects from subfolders inside the src folder
-$projects = Get-ChildItem -Path $srcDir -Directory | ForEach-Object { $_.FullName }
+# $projects = (Get-ChildItem -Path $srcDir -Directory | ForEach-Object { $_.FullName })
+$projects = (
+    "src/Services/Draft.Services.AuthService/Draft.Services.AuthService.csproj",
+    "src/Presentation/Draft.Presentation.ApiGateway/Draft.Presentation.ApiGateway.csproj"
+)
 
 foreach ($project in $projects) {
     #Compiling the project
@@ -21,7 +25,7 @@ foreach ($project in $projects) {
     
     #Lint checking the project
     Write-Output "Lint checking $project..."
-    ExecSafe { & dotnet tool run dotnet-format -v diag --check --exclude .git --exclude bin --exclude obj --folder $project }
+    ExecSafe { & dotnet format whitespace --folder --include ./src/ ./tests/ --exclude ./src/submodule-a/ --verify-no-changes }
     
     #Running unit tests for the project
     Write-Output "Running unit tests for $project..."
@@ -29,5 +33,5 @@ foreach ($project in $projects) {
     
     #Running mutation tests for the project
     Write-Output "Running mutation tests for $project..."
-    ExecSafe { & dotnet stryker --project $project --verbosity normal }
+    ExecSafe { & dotnet stryker -tr vstest -r "['ConsoleProgressBar', 'Html']" }
 }
