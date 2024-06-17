@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\Draft.Core.Infrastructure\Draft.Core.Infrastructure.csproj" />
-    <ProjectReference Include="..\Draft.Infrastructures.Models\Draft.Infrastructures.Models.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Draft.Core.Infrastructure\Draft.Core.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
