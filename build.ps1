@@ -16,15 +16,15 @@ $projects = (
     "src/Services/Draft.Services.AuthService/Draft.Services.AuthService.csproj",
     "src/Presentations/Draft.Presentations.ApiGateway/Draft.Presentations.ApiGateway.csproj"
 )
+    
+#Lint checking the project
+Write-Output "Lint checking sollution"
+ExecSafe { & dotnet format whitespace --folder --include ./src/ ./tests/ --exclude ./src/submodule-a/ --verify-no-changes }
 
 foreach ($project in $projects) {
     #Compiling the project
     Write-Output "Compiling $project..."
     ExecSafe { & dotnet build $project /nodeReuse:false /p:UseSharedCompilation=false -nologo -clp:NoSummary --verbosity quiet }
-    
-    #Lint checking the project
-    Write-Output "Lint checking $project..."
-    ExecSafe { & dotnet format whitespace --folder --include ./src/ ./tests/ --exclude ./src/submodule-a/ --verify-no-changes }
     
     #Running unit tests for the project
     Write-Output "Running unit tests for $project..."
