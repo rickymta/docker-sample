@@ -36,8 +36,5 @@ jobs:
 
       - name: Run PowerShell Script
         run: |
-          pwsh -file ./build.ps1 -Task Compile
-          pwsh -file ./build.ps1 -Task LintCheck
-          pwsh -file ./build.ps1 -Task RunUnitTests
-          pwsh -file ./build.ps1 -Task RunMutationTests
+          pwsh -file ./build.ps1
         shell: pwsh
