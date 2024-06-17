@@ -31,7 +31,9 @@ jobs:
           dotnet tool install -g dotnet-stryker
 
       - name: Add .NET tools to PATH
-        run: echo "::add-path::$(dotnet tool path)"
+        with:
+          ACTIONS_ALLOW_UNSECURE_COMMANDS=true
+        # run: echo "::add-path::$(dotnet tool path)"
 
       - name: Run PowerShell Script
         run: |
