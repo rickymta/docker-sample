@@ -1,8 +1,8 @@
-﻿using Newtonsoft.Json;
-using Draft.Core.Infrastructure.Abstractions;
+﻿using Draft.Core.Infrastructure.Abstractions;
 using Draft.Infrastructures.Models.Entities;
 using Draft.Infrastructures.Models.Jwt;
 using Draft.Infrastructures.Models.Jwt.Enums;
+using Newtonsoft.Json;
 
 namespace Draft.Core.Infrastructure.Implementations;
 
@@ -57,7 +57,7 @@ internal class JwtProvider : IJwtProvider
                 Audiencer = audiencer,
                 Issuer = issuer,
                 Role = account.Type
-			};
+            };
 
             var secret = "";
             var expiredTime = DateTime.Now;

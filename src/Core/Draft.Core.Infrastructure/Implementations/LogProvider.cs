@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
-using Draft.Core.Infrastructure.Abstractions;
+﻿using Draft.Core.Infrastructure.Abstractions;
 using Serilog;
 using System.Text;
 using System.Text.Json;

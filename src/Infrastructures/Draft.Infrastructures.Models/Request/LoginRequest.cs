@@ -22,8 +22,8 @@ public class LoginRequest
     /// </summary>
     public string Password { get; set; } = null!;
 
-	/// <summary>
-	/// AccountType
-	/// </summary>
-	public AccountType Type { get; set; } = AccountType.Customer;
+    /// <summary>
+    /// AccountType
+    /// </summary>
+    public AccountType Type { get; set; } = AccountType.Customer;
 }

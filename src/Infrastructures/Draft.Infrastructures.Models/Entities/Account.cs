@@ -16,24 +16,24 @@ public class Account : BaseEntity
     /// Email
     /// </summary>
     public string Email { get; set; } = null!;
-    
+
     /// <summary>
     /// Password
     /// </summary>
     public string Password { get; set; } = null!;
-    
+
     /// <summary>
     /// Address
     /// </summary>
     public string? Address { get; set; }
-    
+
     /// <summary>
     /// Avatar
     /// </summary>
     public string? Avatar { get; set; }
 
-	/// <summary>
-	/// AccountType
-	/// </summary>
-	public AccountType Type { get; set; }
+    /// <summary>
+    /// AccountType
+    /// </summary>
+    public AccountType Type { get; set; }
 }
