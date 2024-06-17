@@ -30,8 +30,8 @@ foreach ($project in $projects) {
     #Running unit tests for the project
     Write-Output "Running unit tests for $project..."
     ExecSafe { & dotnet test $project --no-build --verbosity normal }
-    
-    #Running mutation tests for the project
-    Write-Output "Running mutation tests for $project..."
-    ExecSafe { & dotnet stryker -tr vstest -r "['ConsoleProgressBar', 'Html']" }
 }
+    
+#Running mutation tests for the project
+Write-Output "Running mutation tests for sollution"
+ExecSafe { & cd src; dotnet-stryker --verbosity trace --log-to-file }
