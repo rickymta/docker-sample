@@ -11,8 +11,7 @@ function ExecSafe([scriptblock] $cmd) {
 
 $srcDir = "$PSScriptRoot\src"
 
-# Get a list of dynamic projects from subfolders inside the src folder
-# $projects = (Get-ChildItem -Path $srcDir -Directory | ForEach-Object { $_.FullName })
+# List of projects
 $projects = (
     "src/Services/Draft.Services.AuthService/Draft.Services.AuthService.csproj",
     "src/Presentations/Draft.Presentations.ApiGateway/Draft.Presentations.ApiGateway.csproj"
@@ -34,4 +33,4 @@ foreach ($project in $projects) {
     
 #Running mutation tests for the project
 Write-Output "Running mutation tests for sollution"
-ExecSafe { & cd src; dotnet-stryker --verbosity trace --log-to-file }
+ExecSafe { & dotnet-stryker --verbosity trace --log-to-file }

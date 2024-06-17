@@ -1,6 +1,5 @@
 {
   "stryker-config": {
-    
     "concurrency": 8,
     "mutation-level": "advanced",
     "language-version": "latest",
