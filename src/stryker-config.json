@@ -8,7 +8,7 @@
     "mutate": [
       "**/*"
     ],
-    "solution": "src/draft.sln",
+    "solution": "./draft.sln",
     "target-framework": null,
     "coverage-analysis": "perTest",
     "disable-bail": false,
